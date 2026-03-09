@@ -1,8 +1,8 @@
 import { Filter, Search } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import ProductCard from '../components/ProductCard.jsx';
-import { addToCart, openCart } from '../store/cart.js';
 import { products } from '../data/products.js';
+import { addToCart, openCart } from '../store/cart.js';
 
 function ShopGrid({ categories }) {
   const [category, setCategory] = useState('All');

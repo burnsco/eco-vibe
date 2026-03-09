@@ -1,8 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-sand-50: #f6f3eb;
+  --color-sand-100: #ede8dc;
+  --color-sand-200: #dfd7c8;
+  --color-sand-300: #cdc2ae;
+  --color-forest-500: #5b6c59;
+  --color-forest-600: #3f503d;
+  --color-forest-700: #31422f;
+  --color-forest-800: #2a3728;
+  --color-forest-900: #243022;
+  --color-fern-100: #dde8d7;
+  --color-fern-200: #c7d8bc;
+  --color-fern-300: #a8c094;
+  --color-fern-500: #7d9f67;
+  --color-fern-600: #658655;
+  --color-fern-700: #4d6d43;
+  --color-clay-200: #e9c0ab;
+  --color-clay-500: #c47752;
+  --color-clay-700: #99553a;
+  --color-honey-500: #db9d3f;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Manrope", sans-serif;
+
+  --shadow-soft: 0 16px 50px -18px rgba(36, 48, 34, 0.35);
+}
 
 :root {
   --sand-50: #f6f3eb;

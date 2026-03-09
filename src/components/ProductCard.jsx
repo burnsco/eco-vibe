@@ -15,8 +15,13 @@ function ProductCard({ product, compact = false, onAddToCart }) {
 
   return (
     <article className="group relative">
-      <div className={`overflow-hidden rounded-[2rem] border border-sand-200 bg-sand-100 ${compact ? 'p-2' : 'p-2.5'}`}>
-        <a href={`/shop/${product.id}`} className="block overflow-hidden rounded-[1.6rem]">
+      <div
+        className={`overflow-hidden rounded-[2rem] border border-sand-200 bg-sand-100 ${compact ? 'p-2' : 'p-2.5'}`}
+      >
+        <a
+          href={`/shop/${product.id}`}
+          className="block overflow-hidden rounded-[1.6rem]"
+        >
           <img
             src={product.image}
             alt={product.name}
@@ -24,6 +29,7 @@ function ProductCard({ product, compact = false, onAddToCart }) {
             height={450}
             className={`w-full object-cover transition duration-700 group-hover:scale-110 ${compact ? 'aspect-square' : 'aspect-[4/3]'}`}
             loading="lazy"
+            decoding="async"
           />
         </a>
         <button
@@ -42,13 +48,17 @@ function ProductCard({ product, compact = false, onAddToCart }) {
             <p className="mb-1 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-clay-700">
               {product.category}
             </p>
-            <h3 className={`font-light leading-tight text-forest-900 ${compact ? 'text-2xl' : 'text-3xl'}`}>
+            <h3
+              className={`font-light leading-tight text-forest-900 ${compact ? 'text-2xl' : 'text-3xl'}`}
+            >
               <a href={`/shop/${product.id}`} className="hover:text-fern-700">
                 {product.name}
               </a>
             </h3>
           </div>
-          <p className={`font-sans font-semibold text-forest-800 ${compact ? 'text-sm' : 'text-base'}`}>
+          <p
+            className={`font-sans font-semibold text-forest-800 ${compact ? 'text-sm' : 'text-base'}`}
+          >
             {formatUSD(product.price)}
           </p>
         </div>

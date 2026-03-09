@@ -1,8 +1,8 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
 import CartDrawer from '../components/CartDrawer.jsx';
+import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
 import '../index.css';
 
 interface Props {
@@ -10,9 +10,9 @@ interface Props {
   description?: string;
 }
 
-const { 
-  title = "Eco Vibe | Sustainable Living", 
-  description = "Eco Vibe — Sustainable living. Curated eco-friendly products for a conscious lifestyle." 
+const {
+  title = 'Eco Vibe | Sustainable Living',
+  description = 'Eco Vibe — Sustainable living. Curated eco-friendly products for a conscious lifestyle.',
 } = Astro.props;
 ---
 
@@ -25,6 +25,9 @@ const {
     <meta name="description" content={description} />
     <meta name="theme-color" content="#166534" />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <ViewTransitions />
   </head>
   <body>
@@ -33,6 +36,6 @@ const {
       <slot />
     </main>
     <Footer />
-    <CartDrawer client:load transition:persist />
+    <CartDrawer client:idle transition:persist />
   </body>
 </html>

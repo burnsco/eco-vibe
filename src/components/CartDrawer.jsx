@@ -1,15 +1,15 @@
 import { useStore } from '@nanostores/react';
 import { Minus, Plus, ShoppingBag, Trash2, X } from 'lucide-react';
-import { 
-  cart, 
-  isCartOpen, 
-  lineItems as lineItemsStore, 
-  itemCount as itemCountStore, 
-  subtotal as subtotalStore,
+import {
+  cart,
+  clearCart,
   closeCart,
-  updateQuantity,
+  isCartOpen,
+  itemCount as itemCountStore,
+  lineItems as lineItemsStore,
   removeFromCart,
-  clearCart
+  subtotal as subtotalStore,
+  updateQuantity,
 } from '../store/cart.js';
 import { formatUSD } from '../utils/format.js';
 

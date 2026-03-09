@@ -1,11 +1,11 @@
 import { useStore } from '@nanostores/react';
 import { ArrowLeft, Minus, Plus, Trash2 } from 'lucide-react';
-import { 
-  lineItems as lineItemsStore, 
-  itemCount as itemCountStore, 
+import {
+  itemCount as itemCountStore,
+  lineItems as lineItemsStore,
+  removeFromCart,
   subtotal as subtotalStore,
   updateQuantity,
-  removeFromCart
 } from '../store/cart.js';
 import { formatUSD } from '../utils/format.js';
 

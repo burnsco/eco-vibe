@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import { ArrowRight } from 'lucide-react';
+import beeswaxWraps from '../assets/images/beeswax-wraps.png';
+import naturalMaterials from '../assets/images/natural-materials.png';
 import Hero from '../components/Hero.astro';
 import ProductCard from '../components/ProductCard.jsx';
 import { products } from '../data/products.js';
-import { ArrowRight } from 'lucide-react';
-import { Image } from 'astro:assets';
-import naturalMaterials from '../assets/images/natural-materials.png';
-import beeswaxWraps from '../assets/images/beeswax-wraps.png';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const featuredProducts = products
   .filter((product) => product.featured)

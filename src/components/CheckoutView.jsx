@@ -1,11 +1,11 @@
 import { useStore } from '@nanostores/react';
 import { ArrowLeft, CheckCircle2, Tag, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
-import { 
-  lineItems as lineItemsStore, 
-  itemCount as itemCountStore, 
+import {
+  clearCart,
+  itemCount as itemCountStore,
+  lineItems as lineItemsStore,
   subtotal as subtotalStore,
-  clearCart
 } from '../store/cart.js';
 import { formatUSD } from '../utils/format.js';
 
@@ -72,14 +72,23 @@ function validateField(name, value) {
   }
   if (name === 'zip') {
     if (!trimmed) return 'ZIP code is required.';
-    if (!/^\d{5}(?:-\d{4})?$/.test(trimmed)) return 'Use ZIP format 12345 or 12345-6789.';
+    if (!/^\d{5}(?:-\d{4})?$/.test(trimmed))
+      return 'Use ZIP format 12345 or 12345-6789.';
     return '';
   }
   return '';
 }
 
 function validateForm(form) {
-  const fields = ['email', 'firstName', 'lastName', 'address', 'city', 'state', 'zip'];
+  const fields = [
+    'email',
+    'firstName',
+    'lastName',
+    'address',
+    'city',
+    'state',
+    'zip',
+  ];
   return fields.reduce((result, field) => {
     result[field] = validateField(field, form[field]);
     return result;
@@ -107,8 +116,10 @@ function CheckoutView() {
 
   const shipping = useMemo(() => {
     if ($itemCount === 0) return 0;
-    const defaultShipping = form.shipping === 'express' ? 15 : $subtotal >= 75 ? 0 : 7;
-    if (appliedPromo?.type === 'shipping' && form.shipping === 'standard') return 0;
+    const defaultShipping =
+      form.shipping === 'express' ? 15 : $subtotal >= 75 ? 0 : 7;
+    if (appliedPromo?.type === 'shipping' && form.shipping === 'standard')
+      return 0;
     return defaultShipping;
   }, [appliedPromo, form.shipping, $itemCount, $subtotal]);
 
@@ -134,7 +145,10 @@ function CheckoutView() {
   function handleBlur(event) {
     const { name, value } = event.target;
     setTouched((current) => ({ ...current, [name]: true }));
-    setErrors((current) => ({ ...current, [name]: validateField(name, value) }));
+    setErrors((current) => ({
+      ...current,
+      [name]: validateField(name, value),
+    }));
   }
 
   function applyPromo() {
@@ -149,7 +163,9 @@ function CheckoutView() {
       return;
     }
     if (promo.minSubtotal && $subtotal < promo.minSubtotal) {
-      setPromoError(`Code requires at least ${formatUSD(promo.minSubtotal)} subtotal.`);
+      setPromoError(
+        `Code requires at least ${formatUSD(promo.minSubtotal)} subtotal.`,
+      );
       return;
     }
     setAppliedPromo({ code, ...promo });
@@ -175,7 +191,13 @@ function CheckoutView() {
     const hasErrors = Object.values(nextErrors).some(Boolean);
     setErrors(nextErrors);
     setTouched({
-      email: true, firstName: true, lastName: true, address: true, city: true, state: true, zip: true,
+      email: true,
+      firstName: true,
+      lastName: true,
+      address: true,
+      city: true,
+      state: true,
+      zip: true,
     });
     if (hasErrors) return;
 

@@ -1,10 +1,13 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import ShopGrid from '../../components/ShopGrid.jsx';
 import { products } from '../../data/products.js';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const categories = ['All', ...new Set(products.map((product) => product.category))];
+const categories = [
+  'All',
+  ...new Set(products.map((product) => product.category)),
+];
 ---
 
 <BaseLayout title="Shop | Eco Vibe" description="Curated Essentials for Low-Waste Living">

@@ -1,10 +1,10 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProductCard from '../../components/ProductCard.jsx';
-import { products } from '../../data/products.js';
-import { formatUSD } from '../../utils/format.js';
 import { ArrowLeft, Minus, Plus } from 'lucide-react';
+import ProductCard from '../../components/ProductCard.jsx';
 import ProductDetailActions from '../../components/ProductDetailActions.jsx';
+import { products } from '../../data/products.js';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatUSD } from '../../utils/format.js';
 
 export async function getStaticPaths() {
   return products.map((product) => ({
