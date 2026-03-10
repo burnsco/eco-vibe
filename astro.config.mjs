@@ -1,4 +1,3 @@
-import cloudflare from '@astrojs/cloudflare';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
@@ -7,12 +6,13 @@ export default defineConfig({
   integrations: [react()],
 
   image: {
-    domains: ['images.unsplash.com'],
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'images.unsplash.com',
+    }],
   },
 
   vite: {
     plugins: [tailwindcss()],
   },
-
-  adapter: cloudflare(),
 });
