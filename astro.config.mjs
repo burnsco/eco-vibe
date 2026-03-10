@@ -6,10 +6,12 @@ export default defineConfig({
   integrations: [react()],
 
   image: {
-    remotePatterns: [{
-      protocol: 'https',
-      hostname: 'images.unsplash.com',
-    }],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
 
   vite: {

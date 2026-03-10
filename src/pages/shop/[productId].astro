@@ -65,48 +65,48 @@ const relatedProducts = products
 ---
 
 <BaseLayout title={`${product.name} | Eco Vibe`}>
-  <section className="px-5 py-12 md:px-10 md:py-16">
-    <div className="mx-auto max-w-7xl">
+  <section class="px-5 py-12 md:px-10 md:py-16">
+    <div class="mx-auto max-w-7xl">
       <a
         href="/shop"
-        className="mb-8 inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-forest-600 transition hover:text-forest-900"
+        class="mb-8 inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-forest-600 transition hover:text-forest-900"
       >
         <ArrowLeft size={14} />
         Back to Shop
       </a>
 
-      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="overflow-hidden rounded-[2.2rem] border border-sand-200 bg-sand-100 p-3">
+      <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div class="overflow-hidden rounded-[2.2rem] border border-sand-200 bg-sand-100 p-3">
           <img
             src={product.image}
             alt={product.name}
             width={800}
             height={600}
-            className="aspect-[4/3] w-full rounded-[1.7rem] object-cover"
+            class="aspect-[4/3] w-full rounded-[1.7rem] object-cover"
           />
         </div>
 
         <div>
-          <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-clay-700">
+          <p class="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-clay-700">
             {product.category}
           </p>
-          <h1 className="mb-4 text-6xl font-light leading-[1.02] text-forest-900">
+          <h1 class="mb-4 text-6xl font-light leading-[1.02] text-forest-900">
             {product.name}
           </h1>
-          <p className="mb-4 font-sans text-2xl font-semibold text-forest-800">
+          <p class="mb-4 font-sans text-2xl font-semibold text-forest-800">
             {formatUSD(product.price)}
           </p>
-          <p className="mb-8 max-w-xl font-sans text-base leading-relaxed text-forest-600">
+          <p class="mb-8 max-w-xl font-sans text-base leading-relaxed text-forest-600">
             {product.description}
           </p>
 
           <ProductDetailActions product={product} client:load />
 
-          <div className="rounded-3xl border border-sand-200 bg-sand-100 p-5">
-            <h2 className="mb-3 text-3xl font-light text-forest-900">
+          <div class="rounded-3xl border border-sand-200 bg-sand-100 p-5">
+            <h2 class="mb-3 text-3xl font-light text-forest-900">
               Why you will love it
             </h2>
-            <ul className="space-y-2 font-sans text-sm text-forest-700">
+            <ul class="space-y-2 font-sans text-sm text-forest-700">
               {benefits.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -117,15 +117,15 @@ const relatedProducts = products
     </div>
   </section>
 
-  <section className="border-t border-sand-200 bg-sand-100 px-5 py-14 md:px-10 md:py-16">
-    <div className="mx-auto max-w-7xl">
-      <h2 className="mb-7 text-5xl font-light text-forest-900">
+  <section class="border-t border-sand-200 bg-sand-100 px-5 py-14 md:px-10 md:py-16">
+    <div class="mx-auto max-w-7xl">
+      <h2 class="mb-7 text-5xl font-light text-forest-900">
         You May Also Like
       </h2>
-      <div className="grid gap-6 md:grid-cols-3">
+      <div class="grid gap-6 md:grid-cols-3">
         {relatedProducts.map((entry, index) => (
           <div
-            className="reveal-up"
+            class="reveal-up"
             style={`animation-delay: ${80 + index * 60}ms`}
           >
             <ProductCard
