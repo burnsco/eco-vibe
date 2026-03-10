@@ -16,8 +16,8 @@ function isPathActive(to: string) {
 }
 ---
 
-<header class="sticky top-0 z-50 border-b border-sand-200/70 bg-sand-50/85 backdrop-blur-lg">
-  <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 md:px-10">
+<header class="glass sticky top-0 z-50 border-b border-forest-900/5 shadow-soft">
+  <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 md:px-10">
     <button
       id="mobile-menu-toggle"
       class="rounded-full p-2 text-forest-700 transition hover:bg-sand-200 md:hidden"
@@ -25,14 +25,14 @@ function isPathActive(to: string) {
       aria-label="Toggle navigation"
     >
       <Menu id="menu-icon" size={21} />
-      <X id="close-icon" size={21} class="hidden" />
+      <X id="close-icon" size={21} className="hidden" />
     </button>
 
-    <div class="hidden items-center gap-8 md:flex">
+    <div class="hidden items-center gap-10 md:flex">
       {links.map((link) => (
         <a
           href={link.to}
-          class={`transition-colors ${isPathActive(link.to) ? 'text-forest-800' : 'text-forest-600 hover:text-forest-900'}`}
+          class={`relative font-sans text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-300 before:absolute before:-bottom-1 before:left-0 before:h-px before:w-full before:origin-right before:scale-x-0 before:bg-forest-900 before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 ${isPathActive(link.to) ? 'text-forest-900 before:scale-x-100' : 'text-forest-500/80 hover:text-forest-900'}`}
         >
           {link.label}
         </a>
@@ -41,9 +41,9 @@ function isPathActive(to: string) {
 
     <a
       href="/"
-      class="flex items-center gap-2 text-3xl font-medium tracking-tight text-forest-900"
+      class="flex items-center gap-2.5 text-3xl font-medium tracking-tight text-forest-900 transition-transform duration-500 hover:scale-105"
     >
-      <Leaf class="text-fern-500" size={27} />
+      <Leaf className="text-fern-500 drop-shadow-sm" size={28} />
       Eco<span class="text-fern-600">Vibe</span>
     </a>
 
