@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { journalPosts } from "../data/journal.js";
 
 function JournalGrid({ topics }) {
@@ -40,7 +40,7 @@ function JournalGrid({ topics }) {
               <img
                 src={post.image}
                 alt={post.title}
-                className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105"
+                className="aspect-16/10 w-full object-cover transition duration-700 group-hover:scale-105"
                 loading="lazy"
               />
             </div>

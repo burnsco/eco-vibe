@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
 import { ArrowLeft, CheckCircle2, Tag, X } from "lucide-react";
-import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   clearCart,
   itemCount as itemCountStore,

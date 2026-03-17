@@ -1,5 +1,6 @@
 import { useStore } from "@nanostores/react";
 import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
+import React from "react";
 import {
   clearCart,
   closeCart,
@@ -20,7 +21,7 @@ function CartDrawer() {
 
   return (
     <div
-      className={`fixed inset-0 z-[60] transition ${$isCartOpen ? "pointer-events-auto" : "pointer-events-none"}`}
+      className={`fixed inset-0 z-60 transition ${$isCartOpen ? "pointer-events-auto" : "pointer-events-none"}`}
       aria-hidden={!$isCartOpen}
     >
       <button

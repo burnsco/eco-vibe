@@ -1,5 +1,5 @@
 import { Minus, Plus } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { addToCart, openCart } from "../store/cart.js";
 
 function ProductDetailActions({ product }) {

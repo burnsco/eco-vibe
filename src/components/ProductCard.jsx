@@ -1,4 +1,5 @@
 import { ShoppingBag } from "lucide-react";
+import React from "react";
 import { addToCart, openCart } from "../store/cart.js";
 import { formatUSD } from "../utils/format.js";
 
@@ -18,13 +19,13 @@ function ProductCard({ product, compact = false, onAddToCart = null }) {
       <div
         className={`hover-lift overflow-hidden rounded-[2.5rem] border border-forest-900/5 bg-sand-100 shadow-soft transition-all duration-500 group-hover:shadow-premium ${compact ? "p-2" : "p-2.5"}`}
       >
-        <a href={`/shop/${product.id}`} className="block overflow-hidden rounded-[2rem]">
+        <a href={`/shop/${product.id}`} className="block overflow-hidden rounded-4xl">
           <img
             src={product.image}
             alt={product.name}
             width={600}
             height={450}
-            className={`w-full object-cover transition duration-1000 ease-out group-hover:scale-110 ${compact ? "aspect-square" : "aspect-[4/3]"}`}
+            className={`w-full object-cover transition duration-1000 ease-out group-hover:scale-110 ${compact ? "aspect-square" : "aspect-4/3"}`}
             loading="lazy"
             decoding="async"
           />

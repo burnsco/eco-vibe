@@ -1,5 +1,5 @@
 import { Filter, Search } from "lucide-react";
-import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import ProductCard from "../components/ProductCard.jsx";
 import { products } from "../data/products.js";
 import { addToCart, openCart } from "../store/cart.js";

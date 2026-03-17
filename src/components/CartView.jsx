@@ -1,5 +1,6 @@
 import { useStore } from "@nanostores/react";
 import { ArrowLeft, Minus, Plus, Trash2 } from "lucide-react";
+import React from "react";
 import {
   itemCount as itemCountStore,
   lineItems as lineItemsStore,
