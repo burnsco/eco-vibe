@@ -46,7 +46,7 @@ export function addToCart(productId, quantity = 1) {
     cart.set(
       current.map((item) =>
         item.productId === resolvedId
-          ? { ...item, quantity: item.quantity + resolvedQuantity }
+          ? Object.assign({}, item, { quantity: item.quantity + resolvedQuantity })
           : item,
       ),
     );
@@ -65,7 +65,9 @@ export function updateQuantity(productId, quantity) {
   const current = cart.get();
   cart.set(
     current.map((item) =>
-      item.productId === resolvedId ? { ...item, quantity: resolvedQuantity } : item,
+      item.productId === resolvedId
+        ? Object.assign({}, item, { quantity: resolvedQuantity })
+        : item,
     ),
   );
 }
